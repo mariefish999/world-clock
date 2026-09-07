@@ -12,7 +12,7 @@ function updateTime() {
     );
   }
   let sydneyElement = document.querySelector("#sydney");
-  if (losAngelesElement) {
+  if (sydneyElement) {
     let sydneyDateElement = sydneyElement.querySelector(".date");
     let sydneyTimeElement = sydneyElement.querySelector(".time");
     let sydneyTime = moment().tz("Australia/Sydney");
@@ -20,6 +20,19 @@ function updateTime() {
     sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
 
     sydneyTimeElement.innerHTML = sydneyTime.format(
+      "h:mm:ss:SS [<small>]A[</small>]",
+    );
+  }
+
+  let hongKongElement = document.querySelector("#hong-kong");
+  if (hongKongElement) {
+    let hongkongDateElement = hongKongElement.querySelector(".date");
+    let hongkongTimeElement = hongKongElement.querySelector(".time");
+    let hongkongTime = moment().tz("Asia/Hong_Kong");
+
+    hongkongDateElement.innerHTML = hongkongTime.format("MMMM Do YYYY");
+
+    hongkongTimeElement.innerHTML = hongkongTime.format(
       "h:mm:ss:SS [<small>]A[</small>]",
     );
   }
@@ -43,6 +56,7 @@ function updateCity(event) {
       "A",
     )}</small></div>
   </div>
+  <a href="index.html">All Cities</a>
   `;
 }
 
